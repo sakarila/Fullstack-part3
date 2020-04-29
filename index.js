@@ -42,7 +42,7 @@ app.delete('/api/persons/:id', (req, res, next) => {
         .catch(error => next(error))
 })
 
-app.get('/api/info', (req, re, next) => {
+app.get('/api/info', (req, res, next) => {
     dateTime = new Date()
     Person.find({}).then(persons => {
         res.send(`<p> Phonebook has info for ${persons.length} people </p> ${dateTime}`);
